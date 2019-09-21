@@ -8,7 +8,7 @@ compileAndTests :
   before_script:
     - ls -la
     - mkdir bin
-    - javac -cp bin:. -d bin src/*/*.java
+    - javac -cp bin:. -d LIB/junit-platform-console-standalone-1.5.1.jar:bin src/*/*.java
     - ls bin
     - javac -cp LIB/junit-platform-console-standalone-1.5.1.jar:bin:. -d bin tests/*/*.java
   script:
