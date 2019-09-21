@@ -1,0 +1,39 @@
+# For JAVA
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.zip
+*.tar.gz
+*.rar
+
+*.jar
+*.class
+
+# eclipse specific git ignore
+.DS_Store
+.project
+.metadata
+/bin/
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
