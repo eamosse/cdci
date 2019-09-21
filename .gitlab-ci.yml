@@ -6,30 +6,13 @@ variables:
 compileAndTests : 
 # References to libraries should be managed by any other ways (maven, npm, pip, ...)
   before_script:
-   #- mkdir "$CI_COMMIT_SHA"
-     #- cd "$CI_COMMIT_SHA"
-     #- pwd
-    # - ls -la
-    # - git clone https://git-iutinfo.unice.fr/blay/MiProject.git .
     - ls -la
     - mkdir bin
-    # - rm -rf .git*
-    - javac -cp bin:. -d bin src/helloPK/*.java
+    - javac -cp bin:. -d bin src/*/*.java
     - ls bin
-    - javac -cp LIB/junit-platform-console-standalone-1.5.1.jar:bin:. -d bin tests/helloPK/*.java
+    - javac -cp LIB/junit-platform-console-standalone-1.5.1.jar:bin:. -d bin tests/*/*.java
   script:
     - java -jar LIB/junit-platform-console-standalone-1.5.1.jar --class-path bin --scan-class-path
-  allow_failure: true
-  after_script:
-    # SonarQube
-    #- echo "sonar.projectKey=$CI_PROJECT_NAME" > ./sonar-project.properties
-    #- echo "sonar.projectName=$CI_PROJECT_NAME" >> ./sonar-project.properties
-    #- echo "sonar.projectVersion=$CI_BUILD_ID" >> ./sonar-project.properties
-    #- echo "sonar.php.tests.reportPath=test-result/junit.xml" >> ./sonar-project.properties
-    #- echo "sonar.php.coverage.reportPaths=test-result/coverage.xml" >> ./sonar-project.properties
-    # Path is relative to the sonar-project.properties file. Replace "\" by "/" on Windows.
-    # This property is optional if sonar.modules is set. 
-    #- echo "sonar.sources=./src" >> ./sonar-project.properties
-    #- cat ./sonar-project.properties
-    #- sonar-scanner
+  #allow_failure: true
+  
 
