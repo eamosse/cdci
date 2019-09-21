@@ -34,19 +34,29 @@ class SortAlgorithmsTest {
 	}
 
 
-    @DisplayName("Should sort correctly")
+    @DisplayName("Should sort correctly an empty array")
     @Test
-	void isWellSorted() {
+	void isWellSortedEmptyArray() {
     	Integer[] arrayToTest = new Integer[0];
 		testSortingAlgorithm(arrayToTest);
-		arrayToTest = new Integer[]{1, 3, 5, -3, 15, Integer.MAX_VALUE};
+    }
+		
+	@DisplayName("Should sort correctly arrays")
+    @Test
+	void isWellSorted() {
+    	Integer[] arrayToTest = new Integer[]{1, 3, 5, -3, 15, Integer.MAX_VALUE};
 		testSortingAlgorithm(arrayToTest);
 		arrayToTest = new Integer[]{0, 1, 3, 5, -3, 15, 20, -10, 100, 1000, Integer.MAX_VALUE};
 		testSortingAlgorithm(arrayToTest);
 		arrayToTest = new Integer[]{-1, -3, -5, -7, Integer.MAX_VALUE};
 		testSortingAlgorithm(arrayToTest);
+	}
+	
+	@DisplayName("Should sort correctly large arrays")
+    @Test
+	void isWellSortedLargeArrays() {
 		int maxSize = 50000;
-		arrayToTest = new Integer[maxSize+1];
+		Integer[] arrayToTest = new Integer[maxSize+1];
 		for (int i = maxSize; i>=0; i--)
 			arrayToTest[maxSize-i] = i;
 		testSortingAlgorithm(arrayToTest);
