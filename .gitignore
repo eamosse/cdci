@@ -10,7 +10,6 @@
 *.tar.gz
 *.rar
 
-*.jar
 *.class
 
 # eclipse specific git ignore
